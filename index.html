@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อความถึงเธอ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #ffe6e6;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #message {
+            display: none;
+            font-size: 18px;
+            text-align: left;
+            margin-top: 20px;
+            white-space: pre-line;
+        }
+        .highlight {
+            color: #ff4d4d;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ข้อความถึงจอมมี่</h2>
+        <button onclick="showMessage()">กดเพื่ออ่าน</button>
+        <p id="message"></p>
+    </div>
+    
+    <script>
+        const text = `หลังจากที่ได้รู้จักกัน จอมเป็นคนที่ใจดีกับทุกคนมาก ๆ ดูแลและเอาใจใส่คนรอบข้างจากใจจริง สำหรับเรา นี่เป็นสิ่งที่มีค่ามาก ๆ\n\nแม้แต่ในวันที่เรารู้สึกแย่ ไม่รู้จะไประบายกับใคร แต่เป็นเธอที่คอยหาวิธีทำให้เรากลับมาอารมณ์ดีอีกครั้ง การที่เธอยอมอยู่เป็นเพื่อนเราทำให้เรารู้สึกซาบซึ้งมากจริง ๆ ไม่คิดว่าจะมีใครแบบนี้ด้วย\n\nตรงนั้นแหละที่ทำให้เรารู้ว่า เธอวิเศษกว่าคนอื่น ๆ ที่เราเคยพบมา ผู้หญิงแบบนี้... ใช่เลย\n\nแต่เราก็ไม่รู้หรอก ว่าสิ่งที่จอมทำทั้งหมดนี้มาจากใจจริงหรือเปล่า\nแต่สำหรับเรา... แค่สิ่งที่เธอแสดงออกมาก็ทำให้เรารับรู้ได้แล้ว\n\nด้านความคิด เธอมีแนวคิดที่ตรงกับทัศนคติของเรา และเป็นความคิดที่เรามองว่าถูกต้อง เป็นแนวคิดแบบผู้ใหญ่ที่มีเหตุผล และแน่นอน... เธอมักจะคิดเหมือนเราเสมอ 5555\n\nมันทำให้เรารู้สึกดีนะ อย่างน้อยก็มีคนที่ทำให้เรามั่นใจในความคิดตัวเองมากขึ้น เพราะจริง ๆ แล้ว เราเป็นคนที่ขาดความมั่นใจ แต่เธอกลับทำให้เรามั่นใจมากขึ้น คอยปรับความคิดแย่ ๆ ของเราออกไป\n\nทั้งที่เรารู้ตัวว่าควรคิดยังไง แต่บางครั้งความคิดแย่ ๆ มันกลับชนะขึ้นมา แต่เธอกลับคอยดึงเรากลับมาเสมอ เพื่อไม่ให้เราจมอยู่กับมัน\n\nเราอาจจะเรียบเรียงคำพูดได้ไม่ดีนัก อาจดูสับสนไปบ้าง\nแต่ทั้งหมดนี้มาจากใจของเราจริง ๆ\n\nสิ่งที่เราอยากจะบอกก็คือ...\n\n<span class='highlight'>เราชอบเธอนะ</span>\n\nเธอตรงสเปคเรามากจริง ๆ เราไม่รู้ว่าจะหาผู้หญิงที่วิเศษแบบนี้ได้จากที่ไหนอีกแล้ว\n\nเป็นไปได้ไหม... ที่เราจะขอให้เธอมาเป็นส่วนหนึ่งในชีวิตเรา\nเป็นคนที่ทำให้เราดีขึ้น และเราก็จะพยายามทำให้ชีวิตเธอดีขึ้นเช่นกัน\n\nเราจะคอยอยู่ข้างเธอในวันที่เธออ่อนแอ เหมือนกับที่เธออยู่ข้างเรา\n\nจากที่เราเคยพูดว่า \"เธออยู่เป็นฉัน ฉันอยู่เป็นเพื่อนเธอ\"\nอยากให้มันเปลี่ยนเป็น \"เธออยู่เคียงข้างฉัน ฉันอยู่เคียงข้างเธอ\"\n\nและนี่คือความในใจของเรา `;
+        
+        let index = 0;
+        function showMessage() {
+            const messageElement = document.getElementById("message");
+            messageElement.style.display = "block";
+            const interval = setInterval(() => {
+                if (index < text.length) {
+                    messageElement.innerHTML = text.slice(0, index).replace(/เราชอบเธอนะ/g, '<span class="highlight">เราชอบเธอนะ</span>');
+                    index++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 20); // ปรับให้ข้อความขึ้นเร็วขึ้น
+        }
+    </script>
+</body>
+</html>
